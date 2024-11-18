@@ -90,9 +90,6 @@ url -vt YOUR_API_KEY -t example.com
 
 Contributions are welcome! Please fork the repository, make your changes, and submit a pull request.
 
-1. Fork the repository.
-2. Ask in Issue
-
 ## License
 
 This project is licensed under the MIT License. See the [MSI](LICENSE) file for details.
