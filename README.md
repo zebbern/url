@@ -86,6 +86,146 @@ url -vt YOUR_API_KEY -t example.com
 - **With Dates**: Each line includes the fetch date in RFC3339 format followed by the URL.
 - **Without Dates**: Only the URLs are displayed.
 
+
+# Advanced Usage of `url` for Penetration Testing
+
+A comprehensive guide to maximize the capabilities of the `url` tool in penetration testing workflows. These examples demonstrate advanced commands for recon and exploitation.
+
+---
+
+## 1. Extract URLs Containing Parameters
+**Identify URLs with query parameters for further injection testing.**
+
+**Use Case:**  
+Locate endpoints potentially vulnerable to SQLi, XSS, or other injection attacks.
+
+```bash
+url example.com | grep '?'
+```
+
+---
+
+## 2. Filter by File Extensions
+**Extract URLs for specific file types such as `.php`, `.aspx`, `.jsp`, or `.txt`.**
+
+**Use Case:**  
+Focus on server-side scripts or configuration files for vulnerability analysis.
+
+```bash
+url example.com | grep -E '\.(php|aspx|jsp|txt)$'
+```
+
+---
+
+## 3. Detect Open Redirects
+**Find URLs with redirect-like parameters (`?url=`, `?redirect=`).**
+
+**Use Case:**  
+Identify open redirects that can be exploited for phishing or bypasses.
+
+```bash
+url example.com | grep -E "redirect=|url="
+```
+
+---
+
+## 5. Hunt for Backup and Config Files
+**Find URLs ending with backup or configuration file extensions.**
+
+**Use Case:**  
+Locate sensitive backup files that might expose credentials or database structures.
+
+```bash
+url example.com | grep -E '\.(bak|old|config|cfg|sql|db)$'
+```
+
+---
+
+## 6. Enumerate Subdomains
+**Identify subdomains from the extracted URLs.**
+
+**Use Case:**  
+Discover subdomains for further recon or exploitation.
+
+```bash
+url example.com | grep -oP 'https?://\K[^/]*' | sort -u
+```
+
+---
+
+## 7. Save URLs for Burp Suite
+**Export unique URLs for crawling and fuzzing in Burp Suite.**
+
+**Use Case:**  
+Import into Burp Suite for automated scanning.
+
+```bash
+url example.com | sort -u > burp_urls.txt
+```
+
+---
+
+## 8. Test LFI Vulnerabilities
+**Filter URLs for potential Local File Inclusion testing.**
+
+**Use Case:**  
+Detect vulnerable endpoints allowing file path manipulation.
+
+```bash
+url example.com | grep -E '\.php\?file='
+```
+
+---
+
+## 9. Extract Endpoints Containing Login or Admin
+**Look for URLs that might indicate sensitive areas of the website.**
+
+**Use Case:**  
+Target administrative or authentication endpoints for brute-forcing or bypass attempts.
+
+```bash
+url example.com | grep -E 'login|admin'
+```
+
+---
+
+## 10. Chain with Other Tools
+**Combine `url` output with popular security tools.**
+
+- **Check Live URLs with `httpx`:**
+  ```bash
+  url example.com | httpx
+  ```
+
+- **Identify Patterns with `gf` (GoFindings):**
+  ```bash
+  url example.com | gf xss
+  ```
+
+- **Expand Data with `waybackurls`:**
+  ```bash
+  url example.com | waybackurls | sort -u
+  ```
+
+---
+
+## 11. Automate and Expand Workflow
+**Create a Bash script to automate common recon tasks.**
+
+**Use Case:**  
+Run a single script to collect multiple data types.
+
+```bash
+#!/bin/bash
+domain=$1
+url $domain | tee urls.txt
+url $domain | grep '\.js$' | tee js_files.txt
+url $domain | grep -E '\.(php|aspx|jsp)$' | tee scripts.txt
+```
+
+---
+
+
 ## Contributing
 
 Contributions are welcome! Please fork the repository, make your changes, and submit a pull request.
