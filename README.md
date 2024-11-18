@@ -5,7 +5,7 @@ This tool allows you to extract archived URLs for specific domains from sources 
 ## Table of Contents
 - [Clone the repository](#Clone-the-repository)
 - [Examples](#Examples)
-- [Advanced Usage](#Advanced-Usage)
+- [Advanced Usage](#AdvancedUsage)
 
 
 ## Features
