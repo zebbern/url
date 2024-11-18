@@ -2,6 +2,12 @@
 
 This tool allows you to extract archived URLs for specific domains from sources like the Wayback Machine, Common Crawl, and VirusTotal. It's a powerful resource for researchers, security analysts, and developers looking to explore historical or archived data about websites.
 
+## Table of Contents
+- [Clone the repository](#Clone-the-repository)
+- [Examples](#Examples)
+- [Advanced Usage](#Advanced-Usage)
+
+
 ## Features
 
 - Fetch URLs from the Wayback Machine and Common Crawl archives.
