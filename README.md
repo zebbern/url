@@ -3,9 +3,9 @@
 This tool allows you to extract archived URLs for specific domains from sources like the Wayback Machine, Common Crawl, and VirusTotal. It's a powerful resource for researchers, security analysts, and developers looking to explore historical or archived data about websites.
 
 ## Table of Contents
-- [Clone the repository](#Clone-the-repository)
+- [Install](#Steps)
 - [Examples](#Examples)
-- [Advanced Usage](#AdvancedUsage)
+- [Advanced Usage](#Advanced-Examples)
 
 
 ## Features
@@ -93,7 +93,7 @@ url -vt YOUR_API_KEY -t example.com
 - **Without Dates**: Only the URLs are displayed.
 
 
-# Advanced Usage of `url` for Penetration Testing
+# Advanced Examples
 
 A comprehensive guide to maximize the capabilities of the `url` tool in penetration testing workflows. These examples demonstrate advanced commands for recon and exploitation.
 
