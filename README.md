@@ -23,13 +23,13 @@ This tool allows you to extract archived URLs for specific domains from sources 
 1. Clone the repository:
 
    ```bash
-   go install github.com/zebbern/urlGrabber@latest
+   go install github.com/zebbern/url@latest
    ```
 
 2. Run the tool:
 
    ```bash
-   urlGrabber [options] [domain...]
+   url [options] [domain...]
    ```
 
 ### Options
@@ -46,31 +46,31 @@ This tool allows you to extract archived URLs for specific domains from sources 
 1. **Fetch URLs for a single domain**:
 
    ```bash
-   urlGrabber example.com
+   url example.com
    ```
 
 2. **Fetch URLs from a file of domains and write to an output file**:
 
    ```bash
-   urlGrabber -t domains.txt -o results.txt
+   url -t domains.txt -o results.txt
    ```
 
 3. **Fetch URLs without subdomains and show fetch dates**:
 
    ```bash
-   urlGrabber -d -n -t example.com
+   url -d -n -t example.com
    ```
 
 4. **List archived versions of URLs**:
 
    ```bash
-   urlGrabber -v example.com
+   url -v example.com
    ```
 
 5. **Fetch URLs including VirusTotal data**:
 
    ```bash
-   urlGrabber -vt YOUR_API_KEY -t example.com
+   url -vt YOUR_API_KEY -t example.com
    ```
 
 ## API Key Setup for VirusTotal
@@ -78,7 +78,7 @@ This tool allows you to extract archived URLs for specific domains from sources 
 To fetch URLs from VirusTotal, you need an API key. You can obtain one by signing up at [VirusTotal](https://www.virustotal.com/gui/join-us). Use the key with the `-vt` option:
 
 ```bash
-urlGrabber -vt YOUR_API_KEY -t example.com
+url -vt YOUR_API_KEY -t example.com
 ```
 
 ## Output Format
